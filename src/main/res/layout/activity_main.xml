@@ -7,13 +7,13 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/lblSensorGps"
-        android:text="Sensor GPS: ?"
+        android:id="@+id/lblSensorAcelerometro"
+        android:layout_width="wrap_content"
         android:layout_marginTop="60dp"
         android:layout_marginLeft="20dp"
-        android:layout_width="wrap_content"
+        android:text="Sensor Acelerometro: ?"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:textColor="@color/black"
-        android:textSize="25dp"/>
+        android:textSize="25dp"
+        android:textColor="@color/black"/>
+
 </RelativeLayout>

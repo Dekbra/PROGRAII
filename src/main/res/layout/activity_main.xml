@@ -6,14 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/lblSensorAcelerometro"
+    <EditText
+        android:id="@+id/txtNombre"
+        android:inputType="textPersonName"
+        android:hint="Nombre"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/txtDireccion"
+        android:inputType="textMultiLine"
+        android:hint="Direccion"
+        android:layout_below="@id/txtNombre"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/txtTelefono"
+        android:inputType="phone"
+        android:hint="Telefono"
+        android:layout_below="@id/txtDireccion"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:layout_below="@id/txtTelefono"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/txtDui"
+        android:inputType="number"
+        android:hint="Dui"
+        android:layout_below="@id/txtEmail"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnGuardarAgendaAmigos"
+        android:layout_below="@id/txtDui"
+        android:layout_marginTop="40dp"
+        android:text="GUARDAR AMIGOS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabRegresarLtsAmigos"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="20dp"
-        android:text="Sensor Acelerometro: ?"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:textColor="@color/black"/>
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
 
 </RelativeLayout>

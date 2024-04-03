@@ -15,17 +15,21 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+
 public class MainActivity extends AppCompatActivity {
+
+
     TextView tempVal;
     SensorManager sensorManager;
     Sensor sensor;
     SensorEventListener sensorEventListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tempVal = findViewById(R.id.lblSensorLuz);
-        activarSensorLuz();
+        tempVal = findViewById(R.id.lblSensorProximidad);
+        activarSensorProximidad();
     }
     @Override
     protected void onResume() {
@@ -37,21 +41,21 @@ public class MainActivity extends AppCompatActivity {
         detener();
         super.onPause();
     }
-    private void activarSensorLuz(){
+    private void activarSensorProximidad(){
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
         if(sensor==null){
-            tempVal.setText("Tu telefono NO tiene sensor de Luz");
+            tempVal.setText("Tu telefono NO tiene sensor de proximidad");
             finish();
         }
         sensorEventListener = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
                 double valor = sensorEvent.values[0];
-                tempVal.setText("Luz: "+ valor);
-                if( valor<=20 ){
+                tempVal.setText("Proximidad: "+ valor);
+                if( valor<=4 ){
                     getWindow().getDecorView().setBackgroundColor(Color.BLUE);
-                } else if (valor<=50) {
+                } else if (valor<=8) {
                     getWindow().getDecorView().setBackgroundColor(Color.RED);
                 }else{
                     getWindow().getDecorView().setBackgroundColor(Color.YELLOW);
